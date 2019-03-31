@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="picture"
+            type="ru.sberbank.homework28.model.Picture" />
+
+        <variable
+            name="onClickListener"
+            type="ru.sberbank.homework28.recycler.PictureEventListener" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/imageView"
+        android:layout_height="match_parent"
+        android:onClick="@{() -> onClickListener.openPicture(picture)}" />
+</android.support.constraint.ConstraintLayout>
+</layout>
