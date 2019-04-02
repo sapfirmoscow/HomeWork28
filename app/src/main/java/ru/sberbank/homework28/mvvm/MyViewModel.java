@@ -1,55 +1,32 @@
 package ru.sberbank.homework28.mvvm;
 
-import android.annotation.SuppressLint;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.os.AsyncTask;
-
-import java.util.List;
+import android.arch.paging.LivePagedListBuilder;
+import android.arch.paging.PagedList;
 
 import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.mvvm.paging.MySourceFactory;
 
 public class MyViewModel extends ViewModel {
 
-    private final MyModel mModel;
-    private MutableLiveData<List<Picture>> mPictures;
+    private LiveData<PagedList<Picture>> mPictures;
+    private PagedList.Config mConfig;
 
     public MyViewModel() {
         super();
-        mModel = new MyModel();
+        mConfig = new PagedList.Config.Builder()
+                .setEnablePlaceholders(false)
+                .setPrefetchDistance(15)
+                .setPageSize(30)
+                .setInitialLoadSizeHint(30)
+                .build();
     }
 
-    public LiveData<List<Picture>> getPictures() {
+    public LiveData<PagedList<Picture>> getPictures() {
         if (mPictures == null) {
-            mPictures = new MutableLiveData<>();
-            getPicturesFromModel();
+            mPictures = new LivePagedListBuilder<>(new MySourceFactory(), mConfig).build();
         }
         return mPictures;
     }
-
-    public LiveData<List<Picture>> refreshPictures() {
-        if (mPictures != null)
-            getPicturesFromModel();
-        return mPictures;
-    }
-
-    @SuppressLint("StaticFieldLeak")
-    private void getPicturesFromModel() {
-        new AsyncTask<Void, Void, List<Picture>>() {
-
-            @Override
-            protected List<Picture> doInBackground(Void... voids) {
-                return mModel.getPictures();
-            }
-
-            @Override
-            protected void onPostExecute(List<Picture> pictures) {
-                super.onPostExecute(pictures);
-                mPictures.setValue(pictures);
-            }
-        }.execute();
-    }
-
-
 }

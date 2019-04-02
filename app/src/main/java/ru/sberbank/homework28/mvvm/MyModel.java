@@ -17,9 +17,9 @@ public class MyModel {
         apiMapper = new ApiMapper(new RetrofitHelper());
     }
 
-    public List<Picture> getPictures() {
+    public List<Picture> getPictures(int currentPage, int coountOfPhotos) {
         try {
-            return apiMapper.getPhotosSync(18);
+            return apiMapper.getPhotosSync(currentPage, coountOfPhotos).body();
         } catch (IOException e) {
             e.printStackTrace();
         }

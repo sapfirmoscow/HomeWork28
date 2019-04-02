@@ -1,26 +1,26 @@
-package ru.sberbank.homework28.recycler;
+package ru.sberbank.homework28.mvvm.paging;
 
+import android.arch.paging.PagedListAdapter;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.util.DiffUtil;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import ru.sberbank.homework28.R;
 import ru.sberbank.homework28.databinding.ImageItemBinding;
 import ru.sberbank.homework28.model.Picture;
 import ru.sberbank.homework28.mvp.ImageActivity;
+import ru.sberbank.homework28.mvvm.recycler.ImageViewHolder;
+import ru.sberbank.homework28.mvvm.recycler.PictureEventListener;
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageViewHolder> implements PictureEventListener {
-    private List<Picture> mData;
+public class PagingAdapter extends PagedListAdapter<Picture, ImageViewHolder> implements PictureEventListener {
+
     private Context mContext;
 
-    public ImageAdapter(Context context) {
-        mData = new ArrayList<>();
+    public PagingAdapter(Context context, @NonNull DiffUtil.ItemCallback<Picture> diffCallback) {
+        super(diffCallback);
         mContext = context;
     }
 
@@ -33,23 +33,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageViewHolder> implemen
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder imageViewHolder, int i) {
-        imageViewHolder.bind(mData.get(i), this);
-    }
-
-    @Override
-    public int getItemCount() {
-        return mData.size();
-    }
-
-    public void addItem(Picture picture) {
-        mData.add(picture);
-        notifyDataSetChanged();
-    }
-
-    public void addItems(List<Picture> pictures) {
-        mData.clear();
-        mData.addAll(pictures);
-        notifyDataSetChanged();
+        imageViewHolder.bind(getItem(i), this);
     }
 
     @Override

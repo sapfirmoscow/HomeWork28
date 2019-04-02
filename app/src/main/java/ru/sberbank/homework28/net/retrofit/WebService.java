@@ -11,5 +11,8 @@ public interface WebService {
 
 
     @GET("photos/random")
-    Call<List<Picture>> getPhotos(@Query("count") int countOfPhotos, @Query("client_id") String clientKey);
+    Call<List<Picture>> getRandomPhotos(@Query("count") int countOfPhotos, @Query("client_id") String clientKey);
+
+    @GET("photos/")
+    Call<List<Picture>> getPhotos(@Query("page") int page, @Query("per_page") int countOfPhotos, @Query("client_id") String clientKey, @Query("order_by") String sort);
 }

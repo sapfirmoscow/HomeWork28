@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import ru.sberbank.homework28.net.retrofit.WebService;
 
 public class RetrofitHelper {
 

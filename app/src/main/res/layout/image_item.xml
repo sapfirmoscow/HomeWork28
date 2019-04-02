@@ -8,7 +8,7 @@
 
         <variable
             name="onClickListener"
-            type="ru.sberbank.homework28.recycler.PictureEventListener" />
+            type="ru.sberbank.homework28.mvvm.recycler.PictureEventListener" />
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
