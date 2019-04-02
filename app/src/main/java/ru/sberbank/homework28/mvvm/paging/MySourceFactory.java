@@ -2,7 +2,7 @@ package ru.sberbank.homework28.mvvm.paging;
 
 import android.arch.paging.DataSource;
 
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 
 public class MySourceFactory extends DataSource.Factory<Integer, Picture> {
 

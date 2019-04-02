@@ -3,7 +3,7 @@ package ru.sberbank.homework28.mvvm;
 import java.io.IOException;
 import java.util.List;
 
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 import ru.sberbank.homework28.net.retrofit.ApiMapper;
 import ru.sberbank.homework28.net.retrofit.RetrofitHelper;
 

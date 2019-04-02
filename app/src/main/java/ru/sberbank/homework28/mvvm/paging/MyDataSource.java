@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 import ru.sberbank.homework28.mvvm.MyModel;
 
 public class MyDataSource extends PageKeyedDataSource<Integer, Picture> {

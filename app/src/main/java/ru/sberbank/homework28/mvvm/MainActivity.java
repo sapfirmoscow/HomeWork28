@@ -11,7 +11,7 @@ import android.support.v7.widget.GridLayoutManager;
 
 import ru.sberbank.homework28.R;
 import ru.sberbank.homework28.databinding.ActivityMainBinding;
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 import ru.sberbank.homework28.mvvm.paging.PagingAdapter;
 import ru.sberbank.homework28.mvvm.recycler.SpacesItemDecoration;
 

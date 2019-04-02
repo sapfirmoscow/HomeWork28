@@ -1,4 +1,4 @@
-package ru.sberbank.homework28.model;
+package ru.sberbank.homework28.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

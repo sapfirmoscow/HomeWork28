@@ -4,7 +4,7 @@
     <data>
         <variable
             name="picture"
-            type="ru.sberbank.homework28.model.Picture" />
+            type="ru.sberbank.homework28.entity.Picture" />
 
         <variable
             name="onClickListener"

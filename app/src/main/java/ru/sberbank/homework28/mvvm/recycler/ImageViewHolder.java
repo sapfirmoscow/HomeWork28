@@ -8,7 +8,7 @@ import com.squareup.picasso.Picasso;
 
 import ru.sberbank.homework28.R;
 import ru.sberbank.homework28.databinding.ImageItemBinding;
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 
 public class ImageViewHolder extends RecyclerView.ViewHolder {
 

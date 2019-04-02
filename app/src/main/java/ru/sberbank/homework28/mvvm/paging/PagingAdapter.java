@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import ru.sberbank.homework28.R;
 import ru.sberbank.homework28.databinding.ImageItemBinding;
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 import ru.sberbank.homework28.mvp.ImageActivity;
 import ru.sberbank.homework28.mvvm.recycler.ImageViewHolder;
 import ru.sberbank.homework28.mvvm.recycler.PictureEventListener;

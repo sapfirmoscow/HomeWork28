@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.paging.LivePagedListBuilder;
 import android.arch.paging.PagedList;
 
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 import ru.sberbank.homework28.mvvm.paging.MySourceFactory;
 
 public class MyViewModel extends ViewModel {

@@ -3,7 +3,7 @@ package ru.sberbank.homework28.mvvm;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 
-import ru.sberbank.homework28.model.Picture;
+import ru.sberbank.homework28.entity.Picture;
 
 class DiffCallback extends DiffUtil.ItemCallback<Picture> {
     @Override
